@@ -1,0 +1,4 @@
+*.sqlite3
+account/migrations
+career/migrations
+*.pyc

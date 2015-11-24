@@ -37,6 +37,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'account',
+    'portal',
+    'career',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -55,7 +58,7 @@ ROOT_URLCONF = 'pgz.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['template',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -100,3 +103,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS = [
+   ("js", os.path.join(STATIC_ROOT,'js')),
+   ("css", os.path.join(STATIC_ROOT,'css')),
+   ("fonts", os.path.join(STATIC_ROOT,'fonts')),
+   ("image", os.path.join(STATIC_ROOT,'image')),
+   ("img", os.path.join(STATIC_ROOT,'img')),
+]
+
+
+
