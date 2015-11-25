@@ -36,7 +36,7 @@ class Register(TemplateView):
             t = TemplateResponse(request, 'account/register.html', kwargs)
             return t
         except ObjectDoesNotExist:
-            send_mail(u'激活邮件', message, 'noreply@paigongzuo.com', email, fail_silently=False, auth_user=noreply, auth_password='Crawler007', connection=None, html_message=None)
+            send_mail(u'激活邮件', u'测试激活邮件', u'拍工作<noreply@paigongzuo.com>', [email,], fail_silently=False)
             msg = u'send active email'
             print msg
             return HttpResponse(msg)

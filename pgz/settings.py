@@ -113,4 +113,10 @@ STATICFILES_DIRS = [
 ]
 
 
+# email config
+EMAIL_HOST='smtp.exmail.qq.com'
+EMAIL_HOST_USER='noreply@paigongzuo.com'
+EMAIL_HOST_PASSWORD='Password123'
+EMAIL_USE_TLS = True
+
 
