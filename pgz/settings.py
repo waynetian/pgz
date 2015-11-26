@@ -112,6 +112,35 @@ STATICFILES_DIRS = [
    ("img", os.path.join(STATIC_ROOT,'img')),
 ]
 
+# Logging Config
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'standard': {
+            'format': '%(asctime)s [%(threadName)s:%(thread)d] [%(name)s:%(lineno)d] [%(levelname)s]- %(message)s',
+        },
+    },
+    'handlers': {
+        'op_handler': {
+            'level': 'INFO',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': './log/op.log',
+            'formatter':'standard',
+        },
+    },
+ 
+    'loggers': {
+        'op':{
+            'handlers': ['op_handler'],
+            'level': 'INFO',
+            'propagate': False
+        },
+    },
+
+}
+    
+
 
 # email config
 EMAIL_HOST='smtp.exmail.qq.com'
